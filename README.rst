@@ -21,3 +21,6 @@ cat *.txt | grep 'Council File #' | sed 's/.*	//' | tr ',' '\012' | sort -u | gr
 
 (careful, that's a real tab in the sed),
 and manually running grab-files.sh in that directory.
+
+FIXME: monitoring https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=c.search&tab=RJL
+will probably give more up to date results than grabbing agendas.
