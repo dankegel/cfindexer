@@ -17,8 +17,10 @@ old=$(ls los-angeles-city-council-agenda-* | tail -n 1 | sed 's/.*agenda-//')
 new=$((old + 1))
 
 # Check calendar system for new meeting agenda
-if ! wget https://calendar.lacity.org/event/los-angeles-city-council-agenda-$new
+#if ! wget https://calendar.lacity.org/event/los-angeles-city-council-agenda-$new
+if ! curl --fail https://calendar.lacity.org/event/los-angeles-city-council-agenda-$new > los-angeles-city-council-agenda-$new
 then
+   rm -f los-angeles-city-council-agenda-$new
    echo No new agenda
    exit 1
 fi
@@ -30,13 +32,15 @@ cat ../los-angeles-city-council-agenda-$new | grep 'Event Date' | sed 's/.*dateT
 grep href.*agendas < ../los-angeles-city-council-agenda-$new | sed 's,.*href=",,;s,".*,,' > agenda.url
 
 sleep 1
-if ! wget $(cat agenda.url)
+fname=$(cat agenda.url | sed 's,.*/,,')
+#if ! wget $(cat agenda.url)
+if ! curl --fail $(cat agenda.url) > "$fname"
 then
+   rm -f "$fname"
    echo "Could not fetch new agenda"
    exit 1
 fi
 
-fname=$(cat agenda.url | sed 's,.*/,,')
 mv $fname agenda.html
 if ! grep https://cityclerk.lacity.org/lacityclerkconnect/index.cfm < agenda.html | sed 's/.*cfnumber=//;s,".*,,'  > cfnums.txt
 then

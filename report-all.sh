@@ -8,13 +8,13 @@ SRCDIR=$(cd $(dirname $0); pwd)
 # where title and cf# are links to the council file,
 # and NC-CIS is a link to the CIS.
 
-exec > report-cis.html
+exec > report-all.html
 echo "<html>"
 echo "<head>"
-echo "<title>Los Angeles City Council files with Community Impact Statements</title>"
+echo "<title>Los Angeles City Council files</title>"
 echo "</title>"
 echo "<body>"
-echo "<h1>Los Angeles City Council files with Community Impact Statements</h1>"
+echo "<h1>Los Angeles City Council files</h1>"
 echo "Click on a column header to sort by that column.<p>"
 echo "Covers time period from Jan 1, 2013 to $(date)"
 echo "<p>Note: this is a prototype, and will move to a more permanent location soon."
@@ -29,7 +29,7 @@ echo "</tr>"
 
 for cf in $(cat ./*/cfnums.txt | sort -u)
 do
-   sh $SRCDIR/report-one-cf.sh $cf --cisonly
+   sh $SRCDIR/report-one-cf.sh $cf --all
 done
 echo "</table>"
 echo "</body>"
