@@ -12,7 +12,7 @@ then
       while IFS= read -r line
       do
          cisurl=$(echo "$line" | sed 's/ .*//')
-         cisnc=$(echo "$line" | sed -E 's/.*\.pdf  //;s/ Neighborhood (Development )?Council//I;s/the //')
+         cisnc=$(echo "$line" | sed -E 's/.*\.pdf *//;s/ Neighborhood (Development )?Council//I;s/the //')
          # Extract date from filename
          # Make dates uniform; we could strip off the 20, or add it when missing...
          # And, ugh, zero-extend.
