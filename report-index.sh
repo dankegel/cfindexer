@@ -21,7 +21,7 @@ you can play <a href="https://www.lacity.org/your-government/meeting-audiovideo/
 Both of those sources are searchable (try it!), but aren't great at giving an overview, especially if you're interested in neighborhood council Community
 Impact Statements.
 <p>
-So we put together a simple spreadsheet of all council files since 2013, showing which neighborhood councils have submitted CIS's.
+So we put together a simple spreadsheet of all files on the city council's agenda since 2013, showing which neighborhood councils have submitted CIS's.
 Since that's really big, we also put together a smaller spreadsheet showing just council files with CIS's, as well as a few showing just
 council files that mentioned certain major committees. (Since committee names change, those may not be complete; caveat lector.)
 <p>
