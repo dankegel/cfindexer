@@ -5,6 +5,10 @@ daily.sh: fetch latest data, generate new report, upload
 grab-agenda.sh: fetch latest agenda, extract its list of council file
 numbers to $n/cfnums.txt, run grab-files.sh on that file.
 
+grab-hotsheet.sh: fetch latest hotsheet index, extract hotsheets to
+$date.html, their council file numbers to $date.cfnums, and
+call grab-files.sh on that file.
+
 grab-files.sh: fetch council files named in given text file to $foo.html,
 extract URL and NC name of any CIS to $foo.cis
 
