@@ -10,7 +10,7 @@ set -ex
 for cfnum in $(cat cfnums.txt)
 do
    grep 'id="title"' < ./$cfnum.html | sed 's/.*value="//;s/".*//' > ./$cfnum.title
-   egrep -i "href.*Community Impact Statement (from|submitted by)" < ./$cfnum.html | sed 's/.*href="//;s/".*.ubmitted .y/ /;s/<.*//' | sort -u >  ./$cfnum.cis
+   egrep -i "href.*Community Impact Statement (from|submitted by)" < ./$cfnum.html | sed -E 's/.*href="//;s/".*(submitted by|from)/ /I;s/<.*//' | sort -u >  ./$cfnum.cis
    if ! test -s ./$cfnum.cis
    then
       rm ./$cfnum.cis
