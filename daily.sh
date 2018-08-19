@@ -14,7 +14,7 @@ then
 fi
 mkdir -p hotsheets
 cd hotsheets
-if sh $SRCDIR/grab-hotsheet.sh
+if sh $SRCDIR/grab-hotsheets.sh
 then
   report=true
 fi
