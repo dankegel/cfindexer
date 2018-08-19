@@ -49,5 +49,5 @@ then
    exit 1
 fi
 
-sh $SRCDIR/grab-files.sh
-sh $SRCDIR/extract-cis.sh
+sh $SRCDIR/grab-files.sh cfnums.txt
+sh $SRCDIR/extract-cis.sh cfnums.txt
