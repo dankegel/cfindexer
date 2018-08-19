@@ -14,13 +14,15 @@ extract URL and NC name of any CIS to $foo.cis
 
 report-cis.sh: generate HTML report of */*.cis
 
-Note: grab-agenda.sh is good at staying up to date, but 
-for historical council files, the best way I've found at
-the moment is manually searching
-http://cityclerk.lacity.org/cvvs/search/search.cfm
+Note: want to extend back in time to before 2013?
+grab-agenda.sh is good at staying up to date, and grab-hotsheets.sh is even better...
+but not useful for previous years.
+For historical council files, I used to manually search
+http://cityclerk.lacity.org/cvvs/search/search.cfm,
 saving the results for a previous year as YYYY/*.txt,
 extract cf numbers with extract-cfnums.sh.
-then manually running grab-files.sh in that directory.
-
-FIXME: monitoring https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=c.search&tab=RJL
-will probably give more up to date results than grabbing agendas.
+and manually running grab-files.sh in that directory.
+Now I think a version of grab-hotsheet.sh that takes
+a "archived referrals" URL from
+from https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=c.search&tab=RJL
+would be better, but I haven't set that up yet.
