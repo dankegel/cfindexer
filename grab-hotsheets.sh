@@ -31,8 +31,8 @@ do
       url=$(cat $furl)
       curl --fail "$url" > $date.html
       grep lacityclerkconnect.*index < $date.html | sed 's,.*">,,;s/<.*//' > $date.cfnums
-      # FIXME: Pass --force to fetch them even if they already exist -- maybe they've been updated?
-      if test -s $date.cfnums && sh $SRCDIR/grab-files.sh $date.cfnums && sh $SRCDIR/extract-cis.sh $date.cfnums
+      # Pass --force to fetch them even if they already exist -- maybe they've been updated?
+      if test -s $date.cfnums && sh $SRCDIR/grab-files.sh --force $date.cfnums && sh $SRCDIR/extract-cis.sh $date.cfnums
       then
          result=true
       fi
