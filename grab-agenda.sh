@@ -8,7 +8,7 @@
 #   cfnums.txt: council file numbers mentioned in this agenda
 # On success, run grab-files.sh in that directory.
 
-set -ex
+set -e
 SRCDIR=$(cd $(dirname $0); pwd)
 
 mkdir -p ~/lacity/agendalinks

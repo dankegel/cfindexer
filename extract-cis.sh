@@ -10,7 +10,7 @@ case "$1" in
 esac
 
 SRCDIR=$(cd $(dirname $0); pwd)
-set -ex
+set -e
 
 for cfnum in $(cat $1)
 do
