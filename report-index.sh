@@ -34,6 +34,11 @@ The spreadsheets are a work in progress.  Please write dank@kegel.com with comme
 <li><a href="report-all.html">All</a>
 <li><a href="report-cis.html">With Community Impact Statements</a>
 _EOF_
+for c in $SRCDIR/topics/*.pat
+do
+    cat=$(basename $c .pat)
+    echo "<li><a href=\"report-$cat.html\">Related to topic $cat"
+done
 
 for c in $SRCDIR/committees/*.comm
 do

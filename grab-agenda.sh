@@ -42,7 +42,7 @@ then
 fi
 
 mv $fname agenda.html
-if ! grep https://cityclerk.lacity.org/lacityclerkconnect/index.cfm < agenda.html | sed 's/.*cfnumber=//;s,".*,,'  > cfnums.txt
+if ! grep https://cityclerk.lacity.org/lacityclerkconnect/index.cfm < agenda.html | sed 's/.*cfnumber=//;s,".*,,;s, ,,' | grep '[0-9]-' > cfnums.txt
 then
    echo "Could not get council file numbers"
    rm -f cfnums.txt

@@ -36,3 +36,13 @@ do
         rm -f "$cat".cfnums
     fi
 done
+
+# Topic patterns are in files named after the topic
+for patfile in $SRCDIR/topics/*.pat
+do
+    topic=$(basename $patfile .pat)
+    (
+      find . -name '*.title' | xargs egrep -i -f $patfile | sed 's,:.*,,;s,.*/,,;s/\.[a-z]*$//' | grep '[0-9]-'
+      find . -name '*.htm*' | xargs egrep -i -f $patfile | sed 's,:.*,,;s,.*/,,;s/\.[a-z]*$//' | grep '[0-9]-'
+    ) | sort -u > "$topic".cfnums
+done

@@ -27,7 +27,7 @@ echo "<th>See CIS from ..."
 echo "<th>CIS filed on"
 echo "</tr>"
 
-for cf in $(cat ./*/cfnums.txt | sort -u)
+for cf in $(cat ./*/cfnums.txt | sort -r -u)
 do
    sh $SRCDIR/report-one-cf.sh $cf --cisonly
 done
