@@ -23,11 +23,14 @@ electric school bus
 electrification
 extreme weather
 fluorocarbon
+fossil fuel
 fracking
 freon
 fuel switching
 global warming
 greenhouse
+heatstorm
+heat island effect
 hfc
 kigali accord
 ocean acidification
@@ -38,3 +41,6 @@ sea level rise
 sf6
 smart charger
 smart thermostat
+sustainable
+sustainability
+zero emission

@@ -2,7 +2,7 @@
 # Given a council file number, output a table row about it.
 # If arg 2 is --cisonly, only output a row if there is no CIS.
 cf=$1
-cftitle=$(cat ./*/"$cf".title | head -n 1 | cut -c1-80)
+cftitle=$(cat ./*/"$cf".title | head -n 1 | cut -c1-105)
 cfurl="https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=$cf"
 n=$(find . -name $cf.cis | wc -l)
 if test $n -gt 0

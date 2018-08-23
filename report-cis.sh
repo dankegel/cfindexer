@@ -15,9 +15,10 @@ echo "<title>Los Angeles City Council files with Community Impact Statements</ti
 echo "</title>"
 echo "<body>"
 echo "<h1>Los Angeles City Council files with Community Impact Statements</h1>"
+echo "<small><a href=".">Back to index</a></small><p>"
 echo "Click on a column header to sort by that column.<p>"
 echo "Covers Jan 1, 2013 to $(date)"
-echo "<p>Note: this is a prototype, and will move to a more permanent location soon."
+echo "<p>Note: this is a prototype, and may move to a more permanent location soon."
 echo "<p>"
 echo "<script src="sorttable.js"></script>"
 echo "<table border=1 class=sortable>"
@@ -32,5 +33,6 @@ do
    sh $SRCDIR/report-one-cf.sh $cf --cisonly
 done
 echo "</table>"
+echo "<small><a href=".">Back to index</a></small><p>"
 echo "</body>"
 echo "</html>"

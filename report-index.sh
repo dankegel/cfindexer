@@ -33,18 +33,25 @@ The spreadsheets are a work in progress.  Please write dank@kegel.com with comme
 <ul>
 <li><a href="report-all.html">All</a>
 <li><a href="report-cis.html">With Community Impact Statements</a>
+</ul>
+<h2>Council Files by topic</h2>
+<ul>
 _EOF_
 for c in $SRCDIR/topics/*.pat
 do
     cat=$(basename $c .pat)
-    echo "<li><a href=\"report-$cat.html\">Related to topic $cat"
+    echo "<li><a href=\"report-$cat.html\">Related to topic $cat</a>"
 done
-
+cat <<_EOF_
+</ul>
+<h2>Council Files by committee</h2>
+<ul>
+_EOF_
 for c in $SRCDIR/committees/*.comm
 do
     cn="$(sed 's/\|.*//' < $c)"
     cat=$(basename $c .comm)
-    echo "<li><a href=\"report-$cat.html\">Related to $cn"
+    echo "<li><a href=\"report-$cat.html\">Related to $cn</a>"
 done
 echo "</table>"
 echo "</body>"
