@@ -11,6 +11,7 @@ SRCDIR=$(cd $(dirname $0); pwd)
 for c in $SRCDIR/topics/*.pat
 do
     cat=$(basename $c .pat)
+    echo "=== Considering topic $cat"
     cn="$cat"
     exec > report-$cat.html
     echo "<html>"
@@ -34,7 +35,7 @@ do
 
     for cf in $(cat ./*/$cat.cfnums | sort -r -u)
     do
-       sh $SRCDIR/report-one-cf.sh $cf --any
+       sh $SRCDIR/report-one-cf.sh $cf --any || true
     done
     echo "</table>"
     echo "<small><a href=".">Back to index</a></small><p>"
