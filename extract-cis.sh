@@ -31,7 +31,7 @@ for c in $SRCDIR/committees/*.comm
 do
     cat=$(basename $c .comm)
     pat=$(sed 's/,/,?/' < $c)
-    if ! egrep -li "$pat" *-*.html | sed 's/.html//' | grep '[0-9]' > "$cat".cfnums
+    if ! egrep -w -li "$pat" *-*.html | sed 's/.html//' | grep '[0-9]' > "$cat".cfnums
     then
         rm -f "$cat".cfnums
     fi
@@ -47,7 +47,7 @@ do
         antipatfile=/dev/null
     fi
     (
-      find . -name '*.title' | xargs egrep -i -L -f $antipatfile | xargs egrep -i -f $patfile | sed 's,:.*,,;s,.*/,,;s/\.[a-z]*$//' | grep '[0-9]-'
-      find . -name '*.htm*' | xargs egrep -i -L -f $antipatfile | xargs egrep -i -f $patfile | sed 's,:.*,,;s,.*/,,;s/\.[a-z]*$//' | grep '[0-9]-'
+      find . -name '*.title' | xargs egrep -w -i -L -f $antipatfile | xargs egrep -w -i -f $patfile | sed 's,:.*,,;s,.*/,,;s/\.[a-z]*$//' | grep '[0-9]-'
+      find . -name '*.htm*' | xargs egrep -w -i -L -f $antipatfile | xargs egrep -w -i -f $patfile | sed 's,:.*,,;s,.*/,,;s/\.[a-z]*$//' | grep '[0-9]-'
     ) | sort -u > "$topic".cfnums
 done
