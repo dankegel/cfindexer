@@ -11,7 +11,7 @@ SRCDIR=$(cd $(dirname $0); pwd)
 for c in $SRCDIR/topics/*.pat
 do
     cat=$(basename $c .pat)
-    echo "=== Considering topic $cat"
+    #echo "=== Considering topic $cat"
     cn="$cat"
     exec > report-$cat.html
     echo "<html>"
