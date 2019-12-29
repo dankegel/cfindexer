@@ -7,19 +7,7 @@ PATH=${PATH}:/usr/local/bin
 
 SRCDIR=$(cd $(dirname $0); pwd)
 cd ~/lacity/agendalinks
-report=false
-if sh $SRCDIR/grab-agenda.sh
-then
-  report=true
-fi
-mkdir -p hotsheets
-cd hotsheets
-if sh $SRCDIR/grab-hotsheets.sh
-then
-  report=true
-fi
-cd ..
-if $report
+if sh -x $SRCDIR/grab-recent.sh
 then
   sh -x $SRCDIR/report.sh
 fi
