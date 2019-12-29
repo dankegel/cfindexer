@@ -1,6 +1,12 @@
 #!/bin/sh
 # Given a council file number, output a table row about it.
 # If arg 2 is --cisonly, only output a row if there is no CIS.
+
+# Reads name of NC on stdin, outputs tidied name on stdout
+tidy_nc() {
+   sed -E 's/ (Neighborhood|Community) (Development )?Coun[cil]*//Ig;s/NDC$//;s/NC$//;s/the //'
+}
+
 cf=$1
 cftitle=$(cat ./*/"$cf".title | head -n 1 | cut -c1-105)
 cfurl="https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=$cf"
@@ -12,7 +18,7 @@ then
       while IFS= read -r line
       do
          cisurl=$(echo "$line" | sed 's/ .*//')
-         cisnc=$(echo "$line" | sed -E 's/.*\.pdf *//;s/ Neighborhood (Development )?Council//I;s/the //')
+         cisnc=$(echo "$line" | sed -E 's/.*\.pdf *//' | tidy_nc)
          # Extract date from filename
          # Make dates uniform; we could strip off the 20, or add it when missing...
          # Add missing dash if needed (e.g. 14-0656-S9_cis_12-1315.pdf should be 14-0656-S9_cis_12-13-15.pdf)
@@ -23,7 +29,7 @@ then
          cisdate=$(echo "$cisdate" | awk -F- '{print $3"-"$1"-"$2}')
          echo "<tr><th align=left><a href=\"$cfurl\">$cf</a>"
          echo "<td><a href=\"$cfurl\">$cftitle</a>"
-         echo "<td><a href=\"$cisurl\">$cisnc NC</a>"
+         echo "<td><a href=\"$cisurl\">$cisnc</a>"
          echo "<td>$cisdate"
       done
 elif test x"$2" != x"--cisonly"
