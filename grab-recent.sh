@@ -16,8 +16,8 @@ cd $nowish
 
 # Fetch recent council file numbers that have interesting updates
 
-last_week=$(date -v-1y "+%m/%d/%Y")
-next_week=$(date -v+1y "+%m/%d/%Y")
+last_week=$(date -v-1w "+%m/%d/%Y")
+next_week=$(date -v+1w "+%m/%d/%Y")
 
 # 2 referred
 # 5 document submitted
