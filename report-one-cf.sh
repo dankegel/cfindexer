@@ -4,7 +4,8 @@
 
 # Reads name of NC on stdin, outputs tidied name on stdout
 tidy_nc() {
-   sed -E 's/ (Neighborhood|Community) (Development )?Coun[cil]*//Ig;s/NDC$//;s/NC$//;s/the //'
+   sed -E 's/ (Neighborhood|Neighbhood|Neighborghood|Neighborhodd|Neighborhood|Neighbrohood|Neighhborhood|Neughborhood|Community) (of Historic Arlington Heights)?(Development )?Cou[ncil]*//Ig;s/NDC$//;s/NC$//;s/the //'
+
 }
 
 cf=$1
