@@ -20,8 +20,8 @@ tidy_nc() {
    sed 's/Voices of 90037/Voices/;s/WEST/West/' |
    sed 's/Wilshire Center-Koreatown/Wilshire Center Koreatown/' |
    sed 's/Woodland Hills-Warner Center/Woodland Hills Warner Center/' |
-   sed -E "s/((Community|$neighborhood) )?(Development )?(Coun(cils?)? ?)?(of )?//Ig" |
-   sed 's/NDC//;s/NC//;s/by //;s/the //' |
+   sed -E "s/((Community|$neighborhood) )?(Development )?(Coucnil|Council|Councils) ?)?(of )?//Ig" |
+   sed 's/Empowerment Congress//;s/NDC//;s/NC//;s/by //;s/the //' |
    sed 's/\<\([A-Z a-z][A-Z a-z]*\) *,\1\>/\1/g' |
    sed 's/(e)//;s/(1st Submittal)//;s/(2nd Submittal)//;s/ - 2nd Submission//'
 }
