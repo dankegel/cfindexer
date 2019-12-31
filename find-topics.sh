@@ -37,7 +37,7 @@ do
     fi
     if ! find . -name '*-*.html' -print |
          xargs egrep -w -i -L -f $antipatfile |
-         xargs egrep -w -i -L -f $patfile |
+         xargs egrep -w -i -l -f $patfile |
          sed 's/\.html//' |
          sed 's,./,,' |
          sort |
