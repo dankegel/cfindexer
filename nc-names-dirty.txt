@@ -19,6 +19,8 @@ Central Hollywood Neighborhood Council (e)
 Central San Pedro Neighborhood Council
 Chatsworth Neighborhood Council
 Coastal San Pedro Neighborhood Council
+Community and Neighborhors for Ninth District Unity (CANNDU)
+Community and Neighbors for Ninth District Unity
 Del Rey Neighborhood Council
 Downtown Los Angeles Neighborhood Council
 Downtown Los Angeles Neighborhood Council (e)
@@ -29,6 +31,8 @@ East Hollywood Neighborhood Council (e)
 Echo Park Neighborhood Council
 Elysian Valley Riverside Neighbhood Council (e)
 Elysian Valley Riverside Neighborhood Council
+Empowerment Congress North Area
+Empowerment Congress North Area NDC
 Empowerment Congress North Area NDC Neighborhood Council
 Empowerment Congress North Area Neighborhood Council
 Empowerment Congress North Area Neighborhood Development Council
@@ -36,6 +40,7 @@ Empowerment Congress Southwest Area Neighborhood Council
 Empowerment Congress Southwest Area Neighborhood Development Council
 Empowerment Congress West Area Neighborhood Council
 Empowerment Congress West Area Neighborhood Development Council
+Emppowerment Congress North Area NDC
 Encino Neighborhood Council
 Encino Neighborhood Council (e)
 Foothill Trails District Neighborhood Council
@@ -57,7 +62,8 @@ Greater Echo Park Elysian Neughborhood Council
 Greater Griffith Park Neighborhood Council
 Greater Toluca Lake Neighborhood Council
 Greater Toluca Lake Neighborhood Council (e)
-Greater Valley Glen Council
+Greater Toluca Lake Neighborhood council
+Greater Valley Glen Council   
 Greater Valley Glen Neighborhood Council
 Greater Wilshire Neighborhood Council
 Greater Wilshire Neighborhood Council (1st Submittal)
@@ -70,7 +76,6 @@ Harbor Gateway North Neighborhood Council (e)
 Harbor Gateway South Neighborhood Council
 Hermon Neighborhood Council
 Historic Cultural Neighborhood Council
-Historic Cultural North,Historic Cultural North Neighborhood Council
 Historic Highland Park Neighborhood Council
 Historic Highland Park Neighborhood Council (e)
 Historic Highland Park neighborhood Council
@@ -97,10 +102,15 @@ Mid City Neighborhood Council
 Mid City WEST Neighborhood Council
 Mid City West Community Council
 Mid City West Neighborhood Council
+Mid Town North Hollywood
+Mid Town North Hollywood (e)
 Mid Town North Hollywood Neighborhood Council
 Mid Town North Hollywood Neighborhood Council (e)
 Mid-City Neighborhood Council
+Mid-Town North Hollywood
 Mid-Town North Hollywood Neighborhood Council
+NC Valley Village
+NC Westchester/Playa
 NC Westchester/Playa Neighborhood Council
 Neighborhood Council Empowerment Congress North Area NDC
 Neighborhood Council of Westchester-Playa Del Rey
@@ -108,9 +118,10 @@ Neighborhood Council of Westchester-Playa del Rey
 NoHo Neighborhood Council
 North Hills East Neighborhood Council (e)
 North Hills West Neighborhood Council
+North Hollywood Northeast
 North Hollywood Northeast Neighborhood Council
 North Hollywood Northeast Neighborhood Council (e)
-North Hollywood West Neighborhood Council
+North Hollywood West
 North Westwood Neighborhood Council
 Northridge East Neighborhood Council
 Northridge East Neighborhood Council (e)
@@ -119,17 +130,18 @@ Northridge West Neighborhood Council
 Northwest San Pedro Neighborhood Council
 Northwest San Pedro Neighborhood Council (e)
 Northwest San Pedro Neighborhoos Council
-Olympic Park Neighborhood Council
 PICO Neighborhood Council
 PICO Neighborhood Council (e)
 Pacific Palisades Community Council
 Pacoima Neighborhood Council
 Palms Neighborhood Council
 Panorama City Neighborhood Council
+Park Mesa Heights
 Park Mesa Heights Neighborhood Council
 Pico Neighborhood Council
 Pico Union Neighborhood Council
 Porter Ranch Neighborhood Council
+Rampart Village
 Rampart Village Neighborhood Council
 Reseda Neighborhood Council
 Sherman Oaks Neighborhood Council
@@ -147,15 +159,18 @@ Sunland-Tujunga Neighborhood Council
 Sylmar Neighborhood Council
 Tarzana Neighborhood Council
 United Neighborhoods Neighborhood Council
+United Neighborhoods of the Historic Arlington Heights
 United Neighborhoods of the Historic Arlington Heights Neighborhood Council
 Valley Village Neighborhood Council
+Van Nuys Neighborhood Coun
 Van Nuys Neighborhood Council
 Venice Neighborhood Council
 Venice Neighborhood Council (e)
 Voices Neighborhood Council
+Voices of 90037
 Voices of 90037 Neighborhood Council
 West Adams Neighborhood Council
-West Area Neighborhood Development Council
+West Hills Neighborhood Coucnil
 West Hills Neighborhood Council
 West Hills Neighborhood Council (e)
 West Los Angeles Neighborhood Council
@@ -165,13 +180,16 @@ Westside Neighborhood Council (e)
 Westwood Neighborhood Council
 Westwood Neighborhood Council (e)
 Wilmington Neighborhood Council
+Wilshire Center Koreatown NC
 Wilshire Center Koreatown Neighborhood Council
 Wilshire Center-Koreatown Neighborhood Council
 Wilshire Center-Koreatown Neighborhood Council (e)
 Winnetka Neighborhood Council
 Winnetka Neighborhood Council (e)
 Woodland Hills Warner Center Neighborhodd Council
+Woodland Hills-Warner Center
 Woodland Hills-Warner Center Neighborhood Council
+Zapata - King
 by Mid City West Neighborhood Council
 the Central Alameda Neighborhood Council (e)
 the Chatsworth Neighborhood Council
