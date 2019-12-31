@@ -98,10 +98,10 @@ Los Feliz
 MacArthur Park
 Mar Vista
 Mar Vista
-Mid City
-Mid City West
-Mid City West
-Mid City West
+Mid-City
+Mid-City West
+Mid-City West
+Mid-City West
 North Hollywood
 North Hollywood
 North Hollywood
@@ -190,7 +190,7 @@ Woodland Hills Warner Center
 Woodland Hills Warner Center
 Woodland Hills Warner Center
 Zapata - King
-Mid City West
+Mid-City West
 Central Alameda
 Chatsworth
 Echo Park

@@ -19,6 +19,7 @@ sed 's/Brentwood Community/Brentwood/' |
 sed 's/Greater Echo Park Elysian/Echo Park/' |
 sed 's/Glassel /Glassell /;s/Hils/Hills/;s/Hollwood/Hollywood/' |
 sed 's/Hostoric/Historic/;s/Playa Del Rey/Playa del Rey/;s/VIllage/Village/' |
+sed 's/Mid City/Mid-City/g' |
 sed 's/United Neighborhoods of the Historic Arlington Heights/United Neighborhoods/' |
 sed 's/Voices of 90037/Voices/;s/WEST/West/' |
 sed 's/Wilshire Center-Koreatown/Wilshire Center Koreatown/' |
