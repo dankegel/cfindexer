@@ -28,10 +28,8 @@ echo "<th>See CIS from ..."
 echo "<th>CIS filed on"
 echo "</tr>"
 
-for cf in $(cat ./*/cfnums.txt | sort -r -u)
-do
-   sh $SRCDIR/report-one-cf.sh $cf --cisonly
-done
+find . -name '*-*.cis' | sed 's/.cis//;s,^./,,' | sort -r | xargs -n 1 sh $SRCDIR/format-one-cf.sh
+
 echo "</table>"
 echo "<small><a href=".">Back to index</a></small><p>"
 echo "</body>"

@@ -32,9 +32,9 @@ do
     echo "<th>CIS filed on"
     echo "</tr>"
 
-    for cf in $(cat ./*/$cat.cfnums | sort -r -u)
+    for cf in $(cat $cat.cfnums | sort -r -u)
     do
-       sh $SRCDIR/report-one-cf.sh $cf --any
+       sh $SRCDIR/format-one-cf.sh $cf
     done
     echo "</table>"
     echo "<small><a href=".">Back to index</a></small><p>"

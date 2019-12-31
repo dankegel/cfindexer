@@ -1,6 +1,5 @@
 #!/bin/sh
-# Given a council file number, output a table row about it.
-# If arg 2 is --cisonly, only output a row if there is no CIS.
+# Given a council file number, output at least one table row about it.
 
 # Reads name of NC on stdin, outputs tidied name on stdout
 # See test cases in nc-variants.txt
@@ -13,6 +12,7 @@ tidy_nc() {
    neighborhood='Neighborhood|Neighbhood|Neighborghood|Neighborhodd|Neighborhoos|Neighbrohood|Neighhborhood|Neightborhood|Neughborhood'
    sed -E 's/(Bel Air Beverly Crest|Bel-Air Beverly Crest)/Bel Air-Beverly Crest/' |
    sed -E 's/(NoHo|Mid-Town North Hollywood|Mid Town North Hollywood)/North Hollywood/' |
+   sed -E 's/Community and Neighbors for Ninth District Unity|Community and Neighbor(hor)?s for Ninth District Unity \(CANNDU\)/CANNDU/' |
    sed 's/Greater Echo Park Elysian/Echo Park/' |
    sed 's/Foothills/Foothill/;s/Glassel /Glassell /;s/Hils/Hills/;s/Hollwood/Hollywood/' |
    sed 's/Hostoric/Historic/;s/Playa Del Rey/Playa del Rey/;s/VIllage/Village/' |
@@ -20,20 +20,19 @@ tidy_nc() {
    sed 's/Voices of 90037/Voices/;s/WEST/West/' |
    sed 's/Wilshire Center-Koreatown/Wilshire Center Koreatown/' |
    sed 's/Woodland Hills-Warner Center/Woodland Hills Warner Center/' |
-   sed -E "s/((Community|$neighborhood) )?(Development )?(Councils? ?)?(of )?//Ig" |
+   sed -E "s/((Community|$neighborhood) )?(Development )?(Coun(cils?)? ?)?(of )?//Ig" |
    sed 's/NDC//;s/NC//;s/by //;s/the //' |
    sed 's/\<\([A-Z a-z][A-Z a-z]*\) *,\1\>/\1/g' |
    sed 's/(e)//;s/(1st Submittal)//;s/(2nd Submittal)//;s/ - 2nd Submission//'
 }
 
 cf=$1
-cftitle=$(cat ./*/"$cf".title | head -n 1 | cut -c1-105)
+cftitle=$(cat ./"$cf".title | head -n 1 | cut -c1-105)
 cfurl="https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=$cf"
-n=$(find . -name $cf.cis | wc -l)
-if test $n -gt 0
+if test -f $cf.cis
 then
    echo "Examining $cf.cis" >&2
-   cat ./*/"$cf.cis" | sort -u | \
+   cat ./"$cf.cis" | sort -u | \
       while IFS= read -r line
       do
          cisurl=$(echo "$line" | sed 's/ .*//')
@@ -51,8 +50,7 @@ then
          echo "<td><a href=\"$cisurl\">$cisnc</a>"
          echo "<td>$cisdate"
       done
-elif test x"$2" != x"--cisonly"
-then
+else
    echo "<tr><th align=left><a href=\"$cfurl\">$cf</a>"
    echo "<td><a href=\"$cfurl\">$cftitle</a>"
    echo "<td>"

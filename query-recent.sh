@@ -1,20 +1,16 @@
 #!/bin/sh
-# Look for new city council community impact statments.
-# If any are found, create a directory with the date in the name,
-# and save the council file numbers they're about to cfnums.txt.
-# On success, run grab-files.sh and extract-cis in that directory.
+# Retrieve ids of recently updated city council files.
+#
+# Input: nothing
+# Output: prints one council file number per line to stdout
 
 set -e
 SRCDIR=$(cd $(dirname $0); pwd)
 
-mkdir -p ~/lacity/agendalinks
-cd ~/lacity/agendalinks
-
-nowish=update-$(date +%Y-%m-%d-%H-%M-%S)
-mkdir $nowish
-cd $nowish
-
 # Fetch recent council file numbers that have interesting updates
+# FIXME: handle queries that overflow
+# Note: in the -v option to date, -1w means a week's worth of data.
+# You can use -1m instead to get a month's worth of data... or -1d to get one day's.
 
 last_week=$(date -v-1w "+%m/%d/%Y")
 next_week=$(date -v+1w "+%m/%d/%Y")
@@ -32,13 +28,4 @@ next_week=$(date -v+1w "+%m/%d/%Y")
   tr ' ;"&' '\012' |
   grep cfnumber |
   sed 's/.*=//' |
-  sort -u > cfnums.txt
-if ! test -s cfnums.txt
-then
-   echo "Could not get council file numbers"
-   rm -f cfnums.txt
-   exit 1
-fi
-
-sh $SRCDIR/grab-files.sh cfnums.txt
-sh $SRCDIR/extract-cis.sh cfnums.txt
+  sort -u
