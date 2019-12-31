@@ -35,7 +35,7 @@ do
 
     for cf in $(cat $cat.cfnums | sort -r -u)
     do
-       sh $SRCDIR/format-one-cf.sh $cf || true
+       sh $SRCDIR/report-one-cf.sh $cf || true
     done
     echo "</table>"
     echo "<small><a href=".">Back to index</a></small><p>"

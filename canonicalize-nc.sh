@@ -24,7 +24,7 @@ sed 's/Voices of 90037/Voices/;s/WEST/West/' |
 sed 's/Wilshire Center-Koreatown/Wilshire Center Koreatown/' |
 sed 's,Westchester-Playa del Rey,Westchester/Playa,' |
 sed 's/Woodland Hills-Warner Center/Woodland Hills Warner Center/' |
-sed -E "s/((Community|$neighborhood) )?(Development )?(Coucnil|Coun|Council|Councils) ?)?(of )?//Ig" |
+sed -E "s/((Community|$neighborhood) )?(Development )?((Coucnil|Coun|Council|Councils) ?)?(of )?//Ig" |
 sed -E "s/($neighborhood) *\$//" |
 sed 's/Empp*owerment Congress//;s/NDC//;s/NC//;s/by //;s/the //;s/of *$//' |
 sed 's/\<\([A-Z a-z][A-Z a-z]*\) *,\1\>/\1/g' |

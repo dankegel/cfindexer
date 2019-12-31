@@ -1,5 +1,8 @@
 #!/bin/sh
-# Given a council file number, output at least one table row about it.
+# Given a council file number, if there are any CIS's for it,
+# output corresponding html table rows.
+#
+# FIXME: this should probably just be part of extract-cis.sh
 
 SRCDIR=$(cd $(dirname $0); pwd)
 
@@ -27,9 +30,4 @@ then
          echo "<td><a href=\"$cisurl\">$cisnc</a>"
          echo "<td>$cisdate"
       done
-else
-   echo "<tr><th align=left><a href=\"$cfurl\">$cf</a>"
-   echo "<td><a href=\"$cfurl\">$cftitle</a>"
-   echo "<td>"
-   echo "<td>"
 fi

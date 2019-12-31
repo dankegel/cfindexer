@@ -9,11 +9,17 @@ SRCDIR=$(cd $(dirname $0); pwd)
 
 # Fetch recent council file numbers that have interesting updates
 # FIXME: handle queries that overflow
-# Note: in the -v option to date, -1w means a week's worth of data.
-# You can use -1m instead to get a month's worth of data... or -1d to get one day's.
 
-last_week=$(date -v-1w "+%m/%d/%Y")
-next_week=$(date -v+1w "+%m/%d/%Y")
+if test -f /etc/issue
+then
+   # Linux/GNU
+   last_week=$(date --date="last week" "+%m/%d/%Y")
+   next_week=$(date --date="next week" "+%m/%d/%Y")
+else
+   # BSD
+   last_week=$(date -v-1w "+%m/%d/%Y")
+   next_week=$(date -v+1w "+%m/%d/%Y")
+fi
 
 # 2 referred
 # 5 document submitted

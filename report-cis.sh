@@ -28,7 +28,7 @@ echo "<th>See CIS from ..."
 echo "<th>CIS filed on"
 echo "</tr>"
 
-find . -name '*-*.cis' | sed 's/.cis//;s,^./,,' | sort -r | xargs -n 1 sh $SRCDIR/format-one-cf.sh
+find . -name '*-*.cis' | sed 's/.cis//;s,^./,,' | sort -r | xargs -n 1 sh $SRCDIR/report-one-cf.sh
 
 echo "</table>"
 echo "<small><a href=".">Back to index</a></small><p>"
