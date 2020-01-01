@@ -28,7 +28,12 @@ echo "<th>See CIS from ..."
 echo "<th>CIS filed on"
 echo "</tr>"
 
-find . -name '*-*.cis' | sed 's/.cis//;s,^./,,' | sort -r | xargs -n 1 sh $SRCDIR/report-one-cf.sh
+# Output rows for council files that have CIS's.
+# Scrapy way to recognize them: .rows contains link to a .pdf
+$SRCDIR/list-files.sh |
+   sed 's/\.html/.rows/' |
+   xargs fgrep -li '.pdf' |
+   xargs cat
 
 echo "</table>"
 echo "<small><a href=".">Back to index</a></small><p>"

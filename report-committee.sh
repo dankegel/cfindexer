@@ -32,7 +32,9 @@ do
     echo "<th>CIS filed on"
     echo "</tr>"
 
-    cat $cat.cfnums | xargs -n 1 sh $SRCDIR/report-one-cf.sh
+    cat $cat.cfnums |
+      sed 's/$/.rows/' |
+      xargs cat
 
     echo "</table>"
     echo "<small><a href=".">Back to index</a></small><p>"

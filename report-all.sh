@@ -29,8 +29,8 @@ echo "<th>CIS filed on"
 echo "</tr>"
 
 $SRCDIR/list-files.sh |
-  sed 's/.html//' |
-  xargs -n 1 sh $SRCDIR/report-one-cf.sh
+  sed 's/.html/.rows/' |
+  xargs cat
 
 echo "</table>"
 echo "<small><a href=".">Back to index</a></small><p>"
