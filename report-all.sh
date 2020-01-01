@@ -28,7 +28,9 @@ echo "<th>See CIS from ..."
 echo "<th>CIS filed on"
 echo "</tr>"
 
-find . -name '*-*.title' | sed 's/.title//;s,^./,,' | sort -r | xargs -n 1 sh $SRCDIR/report-one-cf.sh
+$SRCDIR/list-files.sh |
+  sed 's/.html//' |
+  xargs -n 1 sh $SRCDIR/report-one-cf.sh
 
 echo "</table>"
 echo "<small><a href=".">Back to index</a></small><p>"

@@ -9,18 +9,14 @@ set -e
 # Committee names are in files named after the short version of the committee name
 # The files should have commas everywhere one might be used.
 # Missing commas in data files won't prevent a match.
-# FIXME: Assumes council file numbers always have a dash in them, and
-# any filename matching *-*.html is the contents of a council file.
 for c in $SRCDIR/committees/*.comm
 do
     cat=$(basename $c .comm)
     pat=$(sed 's/,/,?/' < $c)
-    if ! find . -name '*-*.html' -print |
-         xargs egrep -w -li "$pat" |
-         sed 's/.html//' |
-         sed 's,./,,' |
-         sort |
-         grep '[0-9]-[0-9]' > "$cat".cfnums
+    if ! $SRCDIR/list-files.sh |
+        xargs egrep -w -li "$pat" |
+        sed 's/.html//' |
+        grep . > "$cat".cfnums
     then
         rm -f "$cat".cfnums
     fi
@@ -35,13 +31,11 @@ do
     then
         antipatfile=/dev/null
     fi
-    if ! find . -name '*-*.html' -print |
-         xargs egrep -w -i -L -f $antipatfile |
-         xargs egrep -w -i -l -f $patfile |
-         sed 's/\.html//' |
-         sed 's,./,,' |
-         sort |
-         grep '[0-9]-[0-9]' > "$topic".cfnums
+    if ! $SRCDIR/list-files.sh |
+        xargs egrep -w -i -L -f $antipatfile |
+        xargs egrep -w -i -l -f $patfile |
+        sed 's/\.html//' |
+        grep . > "$topic".cfnums
     then
         rm "$topic".cfnums
     fi
