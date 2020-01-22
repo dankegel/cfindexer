@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # Retrieve ids of recently updated city council files.
 #
 # Input: nothing

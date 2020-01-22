@@ -18,7 +18,7 @@ cronjob.sh calls:
  daily.sh
 
 daily.sh calls:
- query-recent.sh: output IDs of council files with recent action
+ query-recent.py: output IDs of council files with recent action
  grab-files.sh: fetch council files with given IDs to $ID.html
  extract-cis.sh: for council files with given IDs, output HTML table rows for it
  find-topics.sh: for each topic or committee, search *.html, save matches in $topic.cfnums
@@ -32,3 +32,6 @@ report.sh calls:
  report-cis.sh: generate HTML report for all council files with CIS's
  report-committee.sh: generate HTML reports for each committee
  report-topics.sh: generate HTML reports for each topic
+
+If you need the python dependencies, try:
+  make deps

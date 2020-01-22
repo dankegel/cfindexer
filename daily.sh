@@ -11,7 +11,7 @@ nowish=data-recent-$(date +%Y-%m-%d-%H-%M-%S)
 # There are a lot of data files, so keep them down one level from the reports.
 mkdir -p data
 cd data
-sh $SRCDIR/query-recent.sh > cfs-$nowish.txt
+$SRCDIR/query-recent.py > cfs-$nowish.txt
 if ! test -s cfs-$nowish.txt
 then
   rm cfs-$nowish.txt
