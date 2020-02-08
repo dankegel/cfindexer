@@ -38,7 +38,7 @@ headers = {"Content-Type": "application/x-www-form-urlencoded"}
 cfnums = {}
 
 # Can't do more than about a month without it clipping some results
-for monthsago in range(1, 4):
+for monthsago in range(1, 2):   # note: 2nd param is exclusive.  range(1,2) == [ 1 ]
  tstart = (now - monthsago * month).strftime('%m/%d/%Y')
  tend = (now - (monthsago-1) * month).strftime('%m/%d/%Y')
  for action in actions:
