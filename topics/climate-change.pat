@@ -1,6 +1,7 @@
 battery storage
 [^y]..climate change
 ^climate change
+climate-change
 california public utilities.*gas
 carbon dioxide
 carbon emissions
@@ -11,6 +12,7 @@ climate accord
 climate agreement
 climate communit
 climate emergency
+climate transition
 climate treaty
 co2
 demand response
