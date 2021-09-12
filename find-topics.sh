@@ -12,9 +12,9 @@ set -e
 for c in $SRCDIR/committees/*.comm
 do
     cat=$(basename $c .comm)
-    pat=$(sed 's/,/,?/' < $c)
+    pat=$(sed 's/,/,?/g;s/ / +/g' < $c)
     if ! $SRCDIR/list-files.sh |
-        xargs egrep -w -li "$pat" |
+        xargs egrep -w -b -li "$pat" |
         sed 's/.html//' |
         grep . > "$cat".cfnums
     then

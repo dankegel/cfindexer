@@ -10,7 +10,7 @@ SRCDIR=$(cd $(dirname $0); pwd)
 
 for c in $SRCDIR/committees/*.comm
 do
-    cn="$(sed 's/\|.*//' < $c)"
+    cn="$(sed -E 's/\|.*//' < $c)"
     cat=$(basename $c .comm)
     exec > report-$cat.html
     echo "<html>"

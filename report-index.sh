@@ -56,7 +56,7 @@ cat <<_EOF_
 _EOF_
 for c in $SRCDIR/committees/*.comm
 do
-    cn="$(sed 's/\|.*//' < $c)"
+    cn="$(sed -E 's/\|.*//' < $c)"
     cat=$(basename $c .comm)
     echo "<li><a href=\"report-$cat.html\">Related to $cn</a>"
 done
